@@ -93,3 +93,9 @@ You can see this in demo 2 by inspecting:
 - the type of `resultOne`
 - the type of `resultTwo`
 - the return type of `unfurlDemo`
+
+## Demo 3: `async` arrow functions
+
+> 🎯 **Success criterion:** You can declare an `async` arrow function
+
+Demo 3 shows how an `async` arrow function can be defined - similar to function expressions, it involves an extra `async` keyword and wraps up the return value into a Promise.
