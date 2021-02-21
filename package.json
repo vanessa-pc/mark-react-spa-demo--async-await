@@ -1,5 +1,5 @@
 {
-  "name": "mark-react-spa-demo--intro-to-promises",
+  "name": "mark-react-spa-demo--async-await",
   "version": "0.0.1",
   "scripts": {
     "build": "tsc"
