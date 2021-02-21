@@ -41,3 +41,11 @@ Unlike the other functions in the demo, you _can't_ remove the `async` keyword b
 ```
 'await' expressions are only allowed within async functions and at the top levels of modules.
 ```
+
+### Why would we block?
+
+Both `.then` and `async`/`await` are accepted modern ways of writing asynchronous JS/TS (which also are not mutually exclusive - they _can_ be used together).
+
+The non-blocking behaviour of `.then` lets you just get on with other things whilst you're waiting for some asynchronous operation to complete.
+
+On the other hand, a lot of people find `async`/`await` easier to reason about - because it looks a lot more like normal synchronous code, where one line only runs after the previous line has been completed.
