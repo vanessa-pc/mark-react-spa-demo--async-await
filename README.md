@@ -49,3 +49,32 @@ Both `.then` and `async`/`await` are accepted modern ways of writing asynchronou
 The non-blocking behaviour of `.then` lets you just get on with other things whilst you're waiting for some asynchronous operation to complete.
 
 On the other hand, a lot of people find `async`/`await` easier to reason about - because it looks a lot more like normal synchronous code, where one line only runs after the previous line has been completed.
+
+## Demo 1: `async` function return values
+
+> 🎯 **Success criterion:** You can type the return value of a simple `async` function expression
+
+### What does adding `async` do to a function?
+
+We've seen that making a function `async` lets us use the `await` keyword for if we want to block until a promise is resolved, and it didn't seem to do very much to a function otherwise.
+
+However, even if we don't use `await` inside a function, adding `async` _does_ do something - it changes the return type of a function.
+
+Any `async` function _must_ return a `Promise<T>` for some resolve value type `T`:
+
+- `Promise<void>` is possible
+- `void` is not possible
+- `Promise<string>` is possible
+- `string` is not possible
+
+This means that you could, in principle, chain a `.then` after you call an `async` function, since all Promises have a `.then` method.
+
+You can experiment with this in the `src/1-async-return.ts` file.
+
+Try adding explicit return value types to functions like this:
+
+```ts
+async function promiseToAdd(a: number, b: number) {
+  return a + b;
+}
+```
