@@ -36,7 +36,7 @@ De-comment the `printWithSleepAndBlock("Hello world!")` execution (and comment o
 
 What you'll see is that our default non-blocking behaviour of promises has changed. Now, the execution of the function body pauses at `sleep(5000)` until its promise resolves - and then, once the promise has resolved, the function continues with the rest of its body.
 
-Unlike the other functions in the demo, you _can't_ remove the `async` keyword before `printWithSleepAndBlock`. If you try (and you should), TypeScript will warn you:
+Unlike the earlier functions in the demo, you _can't_ remove the `async` keyword before `printWithSleepAndBlock`. If you try (and you should), TypeScript will warn you:
 
 ```
 'await' expressions are only allowed within async functions and at the top levels of modules.
@@ -78,3 +78,18 @@ async function promiseToAdd(a: number, b: number) {
   return a + b;
 }
 ```
+
+## Demo 2: Unfurling Promises with `await`
+
+> 🎯 **Success criterion:** You can distinguish the types of `Promise<T>` and type of `await Promise<T>`
+
+As we've seen, Promises can be typed with a specific resolve value: `Promise<T>` indicates that the Promise will resolve with a type of `T`.
+
+When you `await Promise<T>`, we block future execution until the promise resolves - and, if it resolves with a value, then the `await` expression returns that value.
+
+You can see this in demo 2 by inspecting:
+
+- the type of `promiseOne`
+- the type of `resultOne`
+- the type of `resultTwo`
+- the return type of `unfurlDemo`

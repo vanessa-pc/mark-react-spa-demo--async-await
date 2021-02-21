@@ -20,6 +20,15 @@ async function printWithSleepAndBlock(message: string) {
   console.log("END of function body");
 }
 
+async function printWithSleepAndBlockTwice(message: string) {
+  console.log("START of function body");
+  await sleep(2000);
+  console.log(message);
+  await sleep(2000);
+  console.log("END of function body");
+}
+
 printStraightforwardly("Hello world!");
 // printWithSleepNoBlock("Hello world!");
 // printWithSleepAndBlock("Hello world!");
+// printWithSleepAndBlockTwice("Hello world!");
