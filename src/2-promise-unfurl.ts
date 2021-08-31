@@ -6,7 +6,15 @@ async function unfurlDemo(): Promise<boolean[]> {
   console.log("result one:", resultOne);
   const resultTwo = await wrapInPromise({ wait: 2000, value: 2 });
   console.log("result two:", resultTwo);
-  return await wrapInPromise({ wait: 2000, value: [true, false] });
+  const result= await wrapInPromise({ wait: 2000, value: [true, false] });
+  console.log(result)
+  return result
 }
 
 unfurlDemo();
+
+// async function executeThis(){
+//   return await unfurlDemo()
+// }
+
+// console.log(executeThis());

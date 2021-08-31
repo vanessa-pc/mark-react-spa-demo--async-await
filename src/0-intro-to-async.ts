@@ -6,7 +6,7 @@ async function printStraightforwardly(message: string) {
   console.log("END of function body");
 }
 
-async function printWithSleepNoBlock(message: string) {
+function printWithSleepNoBlock(message: string) {
   console.log("START of function body");
   sleep(5000);
   console.log(message);
@@ -28,7 +28,7 @@ async function printWithSleepAndBlockTwice(message: string) {
   console.log("END of function body");
 }
 
-printStraightforwardly("Hello world!");
+// printStraightforwardly("Hello world!");
 // printWithSleepNoBlock("Hello world!");
 // printWithSleepAndBlock("Hello world!");
-// printWithSleepAndBlockTwice("Hello world!");
+printWithSleepAndBlockTwice("Hello world!");
